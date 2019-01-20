@@ -20,10 +20,12 @@ def get_max_recommended(arr):
     recommended = []
     for i in range(10):
         maax = max(arr)
+        if maax == 0:
+        	break
         index = arr.tolist().index(maax)
         recommended.append(index)
         arr[index] = 0
-        
+    
     return recommended
 
 def get_predictions(user_id, model):
@@ -48,10 +50,8 @@ def recommend():
     '''Renderer for /recommend.'''
     # initial call to runplan which displays the planner simulation
     user_str = request.args.get('user', default=None)
-    
+
     user = int(user_str)
-    if user <= 0:
-        return 'Please input a username'
 
     pred = get_predictions(user, loaded_model)
 
