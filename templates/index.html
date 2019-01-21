@@ -4,8 +4,28 @@
 
 <html>
 
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
 
-<body>
+.bg {
+  /* The image used */
+  background-image: url("./static/background.png");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+<body class="bg">
+ <div style="margin-left:50px">
+  
   <h4>Kupu Recommender</h4>
   <br>
   <form action="/recommend">
@@ -13,6 +33,7 @@
     <input type="number" name="user" min="0" value="{{user}}" required="">
     <input type="submit" value="Submit">
   </form>
+</div>
 </body>
 
 </html>

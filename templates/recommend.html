@@ -7,7 +7,28 @@
 <head>
 </head>
 
-<body>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("./static/background.png");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+
+<body class="bg">
+ <div style="margin-left:50px">
   <h4>Kupu Recommender</h4>
   <br>
   <form action="/recommend">
@@ -16,12 +37,13 @@
   </br>
   <h3>Recommended product_ids by Kupu:</h3>
   {% for rec in recommendations %}
-    <b>{{rec}}, </b>
+    <p>{{rec}}</p>
   {% endfor %}
   </ul>
   <form action="/">
   	<input type="submit" value="Back">
   </form>
+</div>
 </body>
 
 </html>
